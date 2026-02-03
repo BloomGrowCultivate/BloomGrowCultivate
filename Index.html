@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allie Maria Bartlett | Bloomerang Partner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(to bottom, #f9f6f0 0%, #ebe6db 100%);
+            color: #3a3a3a;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Vintage botanical decorative elements */
+        .botanical-left, .botanical-right {
+            position: fixed;
+            width: 250px;
+            height: 100vh;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .botanical-left {
+            left: 0;
+            top: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 800"><path d="M50,0 Q30,100 50,200 T50,400 T50,600 T50,800" stroke="%23567856" stroke-width="3" fill="none" opacity="0.6"/><circle cx="50" cy="150" r="25" fill="%23567856" opacity="0.4"/><circle cx="70" cy="180" r="15" fill="%23567856" opacity="0.3"/><circle cx="30" cy="190" r="20" fill="%23567856" opacity="0.35"/><path d="M50,150 Q80,160 90,180" stroke="%23567856" stroke-width="2" fill="none" opacity="0.5"/><path d="M50,150 Q20,160 10,180" stroke="%23567856" stroke-width="2" fill="none" opacity="0.5"/><ellipse cx="50" cy="350" rx="30" ry="40" fill="%23567856" opacity="0.3"/><path d="M50,350 L70,320 M50,350 L30,320" stroke="%23567856" stroke-width="2" opacity="0.4"/><circle cx="50" cy="550" r="20" fill="%23567856" opacity="0.35"/><circle cx="65" cy="570" r="12" fill="%23567856" opacity="0.3"/></svg>') no-repeat;
+            background-size: contain;
+        }
+
+        .botanical-right {
+            right: 0;
+            top: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 800"><path d="M150,0 Q170,100 150,200 T150,400 T150,600 T150,800" stroke="%23567856" stroke-width="3" fill="none" opacity="0.6"/><circle cx="150" cy="100" r="22" fill="%23567856" opacity="0.4"/><circle cx="130" cy="120" r="18" fill="%23567856" opacity="0.35"/><circle cx="170" cy="130" r="16" fill="%23567856" opacity="0.3"/><path d="M150,250 Q120,270 110,300 M150,250 Q180,270 190,300" stroke="%23567856" stroke-width="2" fill="none" opacity="0.5"/><ellipse cx="150" cy="450" rx="35" ry="45" fill="%23567856" opacity="0.3" transform="rotate(15 150 450)"/><circle cx="150" cy="650" r="25" fill="%23567856" opacity="0.35"/><path d="M150,650 L165,625 L150,600" stroke="%23567856" stroke-width="2" fill="none" opacity="0.4"/></svg>') no-repeat;
+            background-size: contain;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Header section */
+        header {
+            text-align: center;
+            padding: 80px 20px 60px;
+            border-bottom: 2px solid rgba(86, 120, 86, 0.2);
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .floral-accent {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 30px;
+            opacity: 0.7;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="15" fill="%2371b55f" opacity="0.6"/><ellipse cx="50" cy="30" rx="12" ry="18" fill="%23567856" opacity="0.5"/><ellipse cx="70" cy="50" rx="18" ry="12" fill="%23567856" opacity="0.5"/><ellipse cx="50" cy="70" rx="12" ry="18" fill="%23567856" opacity="0.5"/><ellipse cx="30" cy="50" rx="18" ry="12" fill="%23567856" opacity="0.5"/><ellipse cx="35" cy="35" rx="10" ry="14" fill="%2371b55f" opacity="0.4" transform="rotate(-45 35 35)"/><ellipse cx="65" cy="35" rx="10" ry="14" fill="%2371b55f" opacity="0.4" transform="rotate(45 65 35)"/><ellipse cx="65" cy="65" rx="10" ry="14" fill="%2371b55f" opacity="0.4" transform="rotate(-45 65 65)"/><ellipse cx="35" cy="65" rx="10" ry="14" fill="%2371b55f" opacity="0.4" transform="rotate(45 35 65)"/></svg>') no-repeat center;
+            background-size: contain;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5em;
+            font-weight: 300;
+            color: #3a3a3a;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4em;
+            color: #567856;
+            font-style: italic;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        /* About section */
+        .about-section {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 50px 40px;
+            border-radius: 10px;
+            margin-bottom: 50px;
+            border: 1px solid rgba(86, 120, 86, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .about-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5em;
+            color: #3a3a3a;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: 400;
+        }
+
+        .about-section p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #4a4a4a;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 20px;
+        }
+
+        /* Logo section */
+        .bloomerang-logo {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .bloomerang-logo img {
+            max-width: 300px;
+            height: auto;
+            opacity: 0.9;
+        }
+
+        /* Benefits section */
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 35px 25px;
+            border-radius: 8px;
+            border: 1px solid rgba(86, 120, 86, 0.15);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(86, 120, 86, 0.15);
+        }
+
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            opacity: 0.7;
+        }
+
+        .benefit-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6em;
+            color: #3a3a3a;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .benefit-card p {
+            font-size: 0.95em;
+            color: #5a5a5a;
+            line-height: 1.6;
+        }
+
+        /* Contact section */
+        .contact-section {
+            background: linear-gradient(135deg, rgba(113, 181, 95, 0.1) 0%, rgba(86, 120, 86, 0.1) 100%);
+            padding: 60px 40px;
+            border-radius: 10px;
+            margin: 50px 0;
+            border: 2px solid rgba(86, 120, 86, 0.2);
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8em;
+            color: #3a3a3a;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .contact-info {
+            margin: 30px 0;
+        }
+
+        .contact-item {
+            font-size: 1.2em;
+            color: #4a4a4a;
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .contact-item a {
+            color: #567856;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            border-bottom: 1px solid #567856;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #71b55f 0%, #567856 100%);
+            color: #f9f6f0;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1em;
+            font-weight: 400;
+            margin-top: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(113, 181, 95, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 2px solid rgba(86, 120, 86, 0.2);
+            margin-top: 60px;
+            font-size: 0.9em;
+            color: #6a6a6a;
+        }
+
+        .vine-divider {
+            width: 150px;
+            height: 2px;
+            background: linear-gradient(to right, transparent, rgba(86, 120, 86, 0.4), transparent);
+            margin: 30px auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            .tagline {
+                font-size: 1.1em;
+            }
+
+            .about-section h2 {
+                font-size: 2em;
+            }
+
+            .contact-section h2 {
+                font-size: 2.2em;
+            }
+
+            .botanical-left, .botanical-right {
+                width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="botanical-left"></div>
+    <div class="botanical-right"></div>
+
+    <div class="container">
+        <header>
+            <div class="floral-accent"></div>
+            <h1>Allie Maria Bartlett</h1>
+            <p class="tagline">Cultivating nonprofit growth with Bloomerang.</p>
+        </header>
+
+        <section class="about-section">
+            <h2>Welcome</h2>
+            <p>As a dedicated Bloomerang partner, I help nonprofits discover the power of streamlined donor management. Whether you're looking to strengthen donor relationships, simplify your fundraising efforts, or gain deeper insights into your organization's impact, I'm here to guide you.</p>
+            <div class="vine-divider"></div>
+            <p>Together, we'll explore how Bloomerang's intuitive platform can transform the way you connect with supporters and grow your mission.</p>
+        </section>
+
+        <div class="bloomerang-logo">
+            <svg width="300" height="80" viewBox="0 0 300 80" xmlns="http://www.w3.org/2000/svg">
+                <text x="150" y="50" font-family="Quicksand, Arial, sans-serif" font-size="42" font-weight="600" fill="#71b55f" text-anchor="middle">Bloomerang</text>
+                <circle cx="40" cy="40" r="25" fill="#71b55f" opacity="0.3"/>
+                <circle cx="40" cy="40" r="18" fill="#567856" opacity="0.4"/>
+                <circle cx="40" cy="40" r="10" fill="#71b55f" opacity="0.6"/>
+            </svg>
+        </div>
+
+        <section>
+            <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.5em; text-align: center; margin-bottom: 40px; color: #3a3a3a; font-weight: 400;">Why Bloomerang?</h2>
+            <div class="benefits">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="30" cy="30" r="25" fill="none" stroke="#71b55f" stroke-width="3" opacity="0.6"/>
+                            <path d="M15,30 L25,40 L45,20" stroke="#567856" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Simple & Intuitive</h3>
+                    <p>A user-friendly platform designed specifically for nonprofits, making donor management effortless.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M30,10 L35,25 L50,25 L38,35 L43,50 L30,40 L17,50 L22,35 L10,25 L25,25 Z" fill="#71b55f" opacity="0.6"/>
+                            <circle cx="30" cy="30" r="8" fill="#567856" opacity="0.5"/>
+                        </svg>
+                    </div>
+                    <h3>Retain More Donors</h3>
+                    <p>Built-in retention tools help you keep donors engaged and coming back year after year.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="10" y="35" width="12" height="20" fill="#71b55f" opacity="0.5" rx="2"/>
+                            <rect x="24" y="25" width="12" height="30" fill="#71b55f" opacity="0.6" rx="2"/>
+                            <rect x="38" y="15" width="12" height="40" fill="#567856" opacity="0.6" rx="2"/>
+                        </svg>
+                    </div>
+                    <h3>Powerful Insights</h3>
+                    <p>Data-driven reports and analytics that help you understand your donors and make informed decisions.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h2>Let's Grow Together</h2>
+            <p style="font-size: 1.15em; color: #4a4a4a; max-width: 600px; margin: 0 auto 30px;">Ready to see how Bloomerang can help your nonprofit flourish? I'd love to schedule a personalized demo and show you how easy donor management can be.</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <a href="mailto:AllieBloomsEvansville@gmail.com">AllieBloomsEvansville@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span>📞</span>
+                    <span style="color: #567856; font-style: italic;">(Your Google Voice Number)</span>
+                </div>
+            </div>
+
+            <a href="mailto:AllieBloomsEvansville@gmail.com?subject=Bloomerang Demo Request" class="cta-button">Schedule Your Free Demo</a>
+        </section>
+
+        <footer>
+            <div class="vine-divider"></div>
+            <p>&copy; 2026 Allie Maria Bartlett | Bloomerang Authorized Partner</p>
+            <p style="margin-top: 10px; font-size: 0.85em;">Helping nonprofits in Evansville and beyond cultivate lasting donor relationships.</p>
+        </footer>
+    </div>
+</body>
+</html>
